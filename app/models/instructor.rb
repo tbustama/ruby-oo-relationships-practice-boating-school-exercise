@@ -10,7 +10,7 @@ class Instructor
     end
 
     def passed_students
-        self.instructed_students.select{|inst| inst.status == "passed"}
+        self.instructed_students.select{|inst| inst.status == "passed"}.uniq
     end
 
     def pass_student(student, name)
@@ -40,6 +40,6 @@ class Instructor
     end
 
     def instructed_students
-        BoatingTest.all.select{|inst| inst.instructor == self}.uniq
+        BoatingTest.all.select{|inst| inst.instructor == self}
     end
 end
