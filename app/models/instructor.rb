@@ -36,7 +36,7 @@ class Instructor
     end
 
     def all_students
-        self.instructed_students.map{|inst| inst.student.first_name}
+        self.instructed_students.map{|inst| inst.student.first_name}.uniq
     end
 
     def instructed_students
