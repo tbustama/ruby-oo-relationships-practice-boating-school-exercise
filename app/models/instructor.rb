@@ -10,7 +10,7 @@ class Instructor
     end
 
     def passed_students
-        self.instructed_students.select{|inst| inst.status = "passed"}
+        self.instructed_students.select{|inst| inst.status == "passed"}
     end
 
     def pass_student(student, name)
