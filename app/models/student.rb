@@ -15,7 +15,7 @@ class Student
     end
 
     def all_instructors
-        self.test_student.map {|test| test.instructor}
+        self.test_student.map {|test| test.instructor}.uniq
     end
 
     def self.find_student(first_name)
@@ -24,7 +24,7 @@ class Student
 
     def grade_percentage
         pass = self.test_student.select{|inst| inst.status == "passed"}
-        pass.count.to_f / self.test_student.count.to_f
+        100 * (pass.count.to_f / self.test_student.count.to_f)
     end
 
     def test_student

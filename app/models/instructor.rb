@@ -40,6 +40,6 @@ class Instructor
     end
 
     def instructed_students
-        BoatingTest.all.select{|inst| inst.instructor == self}
+        BoatingTest.all.select{|inst| inst.instructor == self}.uniq
     end
 end
